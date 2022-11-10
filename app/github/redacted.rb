@@ -63,8 +63,8 @@ module Github
       response = response.gsub(%r{</head>}, "#{injected_styles} #{injected_script} \\0")
       response = response.gsub(%r{<meta property="og:image" content="(.*?)" />}, '')
       redactions.each { |redaction|
-        response = response.gsub(%r{/#{redaction}}, "/#{Base64.strict_encode64(redaction)}")
-        response = response.gsub(%r{#{redaction}}, '[redacted]')
+        response = response.gsub(%r{/#{redaction}}i, "/#{Base64.strict_encode64(redaction)}")
+        response = response.gsub(%r{#{redaction}}i, '[redacted]')
       }
 
       ['200', {'Content-Type' => 'text/html'}, [ response ]]
