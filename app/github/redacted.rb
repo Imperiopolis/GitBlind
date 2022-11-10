@@ -67,6 +67,8 @@ module Github
         response = response.gsub(%r{#{redaction}}i, '[redacted]')
       }
 
+      response = response.gsub(%r{href="https://github.com/}, 'href="/')
+
       ['200', {'Content-Type' => 'text/html'}, [ response ]]
     end
   end
