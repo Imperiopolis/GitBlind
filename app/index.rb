@@ -1,5 +1,5 @@
 class Index
-  GITHUB_REPO = 'https://github.com/joyable/gitblind'
+  GITHUB_REPO = 'https://github.com/imperiopolis/gitblind'
 
   def self.process_request(request)
 
@@ -114,7 +114,7 @@ class Index
                 <div id="additionalKeywordsHelp" class="formHelp">
                   Any additional keywords you wish to anonymize, comma separated. For example, this could include the applicant's nicknames or employer.
                 </div>
-                <textarea id='additionalKeywords' class='formControl' name='additionalKeywords' placeholder='Joyable, Some Other Thing'></textarea>
+                <textarea id='additionalKeywords' class='formControl' name='additionalKeywords' placeholder='Signal, Joyable, Some Other Thing'></textarea>
               </div>
               <button type='submit' onclick='generateLink()'>Generate Link</button>
             </div>
